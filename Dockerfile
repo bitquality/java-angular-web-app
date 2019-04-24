@@ -9,6 +9,6 @@ RUN mvn clean package
 ## Runtime
 FROM frolvlad/alpine-java:jre8-slim AS runtime
 WORKDIR /app
-COPY --from=build /app/springbootapp/target/*.jar ./
+COPY --from=build /app/springbootapp/target ./
 EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "*.jar"]
