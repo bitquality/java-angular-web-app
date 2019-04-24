@@ -78,6 +78,7 @@ May 30,2018  | **Release 1.0** | available from [GitHub](https://github.com/aman
       * [Cordova android](#cordova-android)
    * [Deploy jar on heroku from your machine](#deploy-jar-on-heroku-from-your-machine)
    * [Deploy apk on appetize from your machine](#deploy-apk-on-appetize-from-your-machine)
+   * [Build and run with docker](#build-and-run-with-docker)
    * [Automatic build and deploy with travis](#automatic-build-and-deploy-with-travis)
    * [Live demo heroku deployed jar](#live-demo-heroku-deployed-jar)
    * [Live demo appetize deployed apk](#live-demo-appetize-deployed-apk)
@@ -492,6 +493,32 @@ After login, you can [upload app](https://appetize.io/upload) adding the apk fil
 
 So in the [dashboard](https://appetize.io/dashboard) click on view button to visualize your android app.
 
+## Build and run with docker
+
+It allows you to run the jar without frontend and with h2 spring profile (h2 embedded). 
+
+> The base docker image used is the minimal **alpine jre8**, and the Dockerfile is divided in **two phase**:
+The first build the app with the **alpine-jdk8**, the last copy the app built in the final **alpine-jre8** image.
+See the [Dockerfile](Dockerfile)
+
+So, Install on your machine [docker](https://www.docker.com/products/docker-desktop) .
+
+After, in this cloning main folder build image with:
+
+```
+docker build -t myapp .
+
+```
+
+Now, to run container:
+
+```
+docker run -it -p <YOUR-PORT>:8081 --rm myapp
+
+```
+
+> Replace **YOUR-PORT** with a enabled port of your machine. So you can access to the app in http://localhost:YOUR-PORT.
+
 ## Automatic build and deploy with travis
 
 You can configure your git repo for continuous integration with [travis](https://travis-ci.org/) .
@@ -539,5 +566,7 @@ A demo with default mongo embedded db [app](https://spring-boot-angular-app.hero
 ## Live demo appetize deployed apk
 
 A demo with default mongo embedded db [cordova android app](https://appetize.io/app/2h2788g3rd1bhu4qd5fch1hkzw/)
+
+
 
 
