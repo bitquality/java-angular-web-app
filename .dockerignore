@@ -4,5 +4,6 @@ electron-app/
 electron-client/
 electron-jar/
 frontend-app/
-!.mvn/
+.mvn/
 mvnw.cmd
+mvnw

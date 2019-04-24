@@ -3,9 +3,8 @@ WORKDIR /app/springbootapp/
 
 ## copy maven project
 COPY . .
-RUN chmod +x mvnw 
-RUN ls
-RUN mvnw clean package
+RUN apk add --no-cache maven
+RUN mvn clean package
 
 ## Runtime
 FROM frolvlad/alpine-java:jre8-slim AS runtime
