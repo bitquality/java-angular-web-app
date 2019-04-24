@@ -11,4 +11,4 @@ FROM frolvlad/alpine-java:jre8-slim AS runtime
 WORKDIR /app
 COPY --from=build /app/springbootapp/target/app.jar ./
 EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "--spring.profiles.active=h2","app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar","--spring.profiles.active=h2"]
