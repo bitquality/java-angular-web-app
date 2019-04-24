@@ -22,6 +22,8 @@ Moreover, to use the automatic Travis deploy integration, you have only to repla
 
 ## NEWS
 
+* Adding Dockerfile to build and run jar without frontend (as microservice)
+
 * Fixed cordova build error specifying ndk version in .travis file. A migration of nodejs cordova plugin to cordova 8 is in testing [commit](https://github.com/amanganiello90/java-angular-web-app/commit/d5c8bc6290ae0e6151425028622fb7dc1fe17391)
 
 * Maybe it's possible to remove express server and call directly in electron the api with **IPC** but it's better mantains this. Read [here](https://malcoded.com/posts/angular-desktop-electron) and [ngx-electron](https://github.com/ThorstenHans/ngx-electron) 
